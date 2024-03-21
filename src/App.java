@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class App {
     static Turma[] turmas = new Turma[10];
+    // static Aluno alunos = new Aluno;
     static int quantidadeTurma = 0;
     static int quantidadeEstudantes = 0;
     static Scanner scanner = new Scanner(System.in);
@@ -21,16 +22,16 @@ public class App {
                 cadastrarTurma();
                 break;
             case 2:
-                //fazer cadastro de campus
+                cadastrarCampus();
                 break;
             case 3:
-                //fazer cadastro de curso
+                cadastrarCurso();
                 break;
             case 4:
-                //fazer cadastro de estudante
+                cadastrarAluno();
                 break;
             case 5:
-                //fazer cadastro de matricula
+                cadastrarMatricula();
                 break;    
             case 6:
                 gerarRelatorio();
@@ -63,6 +64,60 @@ public class App {
         turmas[quantidadeTurma] = turma;
         quantidadeTurma++;
     }
+
+    public static void cadastrarCampus(){
+        scanner.nextLine();
+        Campus campus = new Campus();
+        System.out.println("Informe o nome do campus: ");
+        campus.nome = scanner.nextLine();
+        System.out.println("Informe o endereço do campus: ");
+        campus.endereco = scanner.nextLine();
+        System.out.println("Informe a cidade do campus: ");
+        campus.cidade = scanner.nextLine();
+
+    }
+      public static void cadastrarCurso(){
+        scanner.nextLine();
+        Curso curso = new Curso();
+        System.out.println("Informe o nome do curso: ");
+        curso.nome = scanner.nextLine();
+        System.out.println("Informe a duração do curso: ");
+        curso.duracao = scanner.nextLine();
+        System.out.println("Informe a modalidade do curso: ");
+        curso.modalidade = scanner.nextLine();
+
+    }
+
+    public static void cadastrarAluno(){
+        scanner.nextLine();
+        Aluno aluno = new Aluno();
+        System.out.println("Informe o nome do aluno: ");
+        aluno.nome = scanner.nextLine();
+        System.out.println("Informe o CPF do aluno: ");
+        aluno.cpf = scanner.nextLine();
+        System.out.println("Informe o telefone do aluno: ");
+        aluno.telefone = scanner.nextLine();
+        System.out.println("Informe o endereço do aluno: ");
+        aluno.endereco = scanner.nextLine();
+        System.out.println("Informe a data de nascimento do aluno: ");
+        aluno.dataNascimento = scanner.nextLine();
+
+    }
+
+     public static void cadastrarMatricula(){
+        scanner.nextLine();
+        Matricula matricula = new Matricula();
+        System.out.println("Informe o RA da matrícula: ");
+        matricula.ra = scanner.nextLine();
+        System.out.println("Informe a data da matrícula: ");
+        matricula.data = scanner.nextLine();
+        System.out.println("Informe a situação da matrícula: ");
+        // matricula.situacao = scanner.nextLine();
+
+    }
+
+
+  
 
     public static void exibirMenu() {
         System.out.println("============================");
